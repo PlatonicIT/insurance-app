@@ -234,8 +234,19 @@ input, textarea {
     font-size: 16px;
 }
 
+.form-box .form-control:disabled {
+    background: transparent;
+    resize: none;
+}
+
 .gmap-box {
     padding: 2rem 1rem;
+}
+
+.gmap-box #disCount.active {
+    background: #38C910!important;
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .maplist {
@@ -252,7 +263,7 @@ input, textarea {
     cursor: pointer;
 }
 
-.maplist h4 {
+.maplist h5 {
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 5px;
@@ -288,6 +299,40 @@ input, textarea {
     height: 100%;
 }
 
+.gm-style .gm-style-iw-c {
+    padding: 0;
+    font-size: 14px;
+    color: #313131;
+}
+
+.gm-style a {
+    color: #CC20C6;
+    opacity: 0.54;
+    display: block;
+}
+
+.gm-style-iw-a {
+    top: -75px;
+}
+
+.gm-style .gm-style-iw-d > div {
+    padding: 1rem;
+}
+
+.gm-style .gm-style-iw-c h5 {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.gm-style .gm-style-iw-c p {
+    margin-bottom: 0;
+    opacity: 0.54;
+}
+
+.gm-style button {
+    right: 0!important;
+    top: 0!important;
+}
 
 
 
@@ -305,7 +350,6 @@ input, textarea {
     }
     .social-menu {
         border-top: 0 none;
-        border-left: 1px solid #ddd;
     }
     .navbar, .navbar-nav, .navbar-brand {
         padding-top: 0;
@@ -336,6 +380,24 @@ input, textarea {
 }
 
 @media screen and (min-width: 991px) {
+    body {
+        font-size: 16px;
+    }
+    .form-control-lg {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1199px) {
+    body {
+        font-size: 17px;
+    }
+    .form-control-lg {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1499px) {
     body {
         font-size: 18px;
     }

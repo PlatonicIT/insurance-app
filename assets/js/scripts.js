@@ -50,4 +50,9 @@ $('.form-control').on('change', function () {
     $('.showOnChange').slideDown();
 });
 
-$('#maplist li').on('click', function () { $(this).addClass('active').siblings().removeClass('active') });
+$('#maplist').on('click', 'li', function () { $(this).addClass('active').siblings().removeClass('active') });
+
+
+$('#disCount').on('click', function () {
+    $(this).toggleClass('active');
+});

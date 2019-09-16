@@ -27,7 +27,7 @@
 	<header class="header-wrap">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand" href="#"><img src="assets/images/vergoedingchecker-logo.png" alt=""></a>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/vergoedingchecker-logo.png" alt=""></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 				  <span class="navbar-toggler-icon"></span>
 				</button>
@@ -60,11 +60,11 @@
 				<div class="col-lg-12">
 					<h1 class="form-title">De Vergoedingschecker</h1>
 					<!-- Form -->
-					<form action="form-step-2.html" class="form-box content-shadow">
+					<form action="form-step-3.html" method="GET" class="form-box content-shadow">
 						<h5>Selecteer je verzekeraar en daarna je pakket en behandeling</h5>
 						<div class="form-group">
 							<label for="verzekeraar">Verzekeraar</label>
-							<select class="form-control form-control-lg" name="verzekeraar" id="verzekeraar">
+							<select class="form-control form-control-lg" name="verzekeraar" id="verzekeraar" required>
 								<option value="">Selecteer je verzekeraar</option>
 								<option value="Aevitae">Aevitae</option>
 								<option value="Value 2">Value 2</option>
@@ -73,7 +73,7 @@
 						</div>
 						<div class="form-group">
 							<label for="verzekering">Naam verzekering</label>
-							<select class="form-control form-control-lg" name="verzekering" id="verzekering">
+							<select class="form-control form-control-lg" name="verzekering" id="verzekering" required>
 								<option value="">Selecteer je aanvullend pakket</option>
 								<option value="Basic">Basic</option>
 								<option value="Value 2">Value 2</option>
@@ -82,7 +82,7 @@
 						</div>
 						<div class="form-group">
 							<label for="behandeling">Behandeling</label>
-							<select class="form-control form-control-lg" name="behandeling" id="behandeling">
+							<select class="form-control form-control-lg" name="behandeling" id="behandeling" required>
 								<option value="">Selecteer je behandeling</option>
 								<option value="Laserontharen">Laserontharen</option>
 								<option value="Value 2">Value 2</option>
@@ -92,21 +92,23 @@
 						<div class="form-group showOnChange">
 							<label for="dekking">Dekking</label>
 							<div class="input-group">
-								<input class="form-control form-control-lg" type="text" name="dekking" id="dekking" value="€100">
+								<input class="form-control form-control-lg" type="text" name="dekking" id="dekking" value="€100" disabled>
 							</div>
 						</div>
 						<div class="form-group showOnChange">
 							<label for="notitie">Notitie</label>
-							<textarea class="form-control form-control-lg" type="text" name="notitie" id="notitie" placeholder="€100 (bij overmatige haargroei in het gezicht)" rows="4"></textarea>
+							<textarea class="form-control form-control-lg" type="text" name="notitie" id="notitie" disabled rows="3">€100 (bij overmatige haargroei in het gezicht)</textarea>
 						</div>
 						<div class="form-group text-center">
-							<p class="alert alert-success">gefeliciteerd! je hebt recht op vergoeding via je</p>
+							<!-- <p class="alert alert-success">gefeliciteerd! je hebt recht op vergoeding via je</p> -->
+							<!-- <p class="alert alert-warning">JAMMER! JE HEBT GEEN RECHT OP VERGOEDING VIA JE</p> -->
 						</div>
 						<div class="form-group showOnChange text-center">
 							<h5>Kies de kliniek waar jij je behandeling wilt laten doen.</h5>
+							<!-- <h5>Kies een kliniek waar jij je behandeling kunt laten doen met een mooie korting.</h5> -->
 						</div>
 						<div class="form-group text-center mb-0 showOnChange">
-							<button type="submit" class="btn btn-block btn-lg btn-magenta">Volgende Stap <span class="icon"><i class="fa fa-angle-right"></i></span></button>
+							<button type="submit" class="btn btn-block btn-lg btn-magenta">Kies Kliniek <span class="icon"><i class="fa fa-angle-right"></i></span></button>
 						</div>
 					</form>
 					<!-- End of Form -->
