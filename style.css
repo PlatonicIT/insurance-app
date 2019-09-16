@@ -1,0 +1,343 @@
+/*
+Version: 1.0.1
+Author: Mehedi Hasan
+Author URI: http://promehedi.com/
+*/
+/* ====================================================================
+[TABLE OF CONTENTS]
+-------------------
+01. Global CSS
+02. 
+*/
+/**
+* ===================================
+* = 01. Global CSS
+* ===================================
+*/
+/* Font Face */
+@font-face {
+    font-family: 'Helvetica';
+    src: url('assets/fonts/Helvetica.woff2') format('woff2'),
+        url('assets/fonts/Helvetica.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('assets/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+        url('assets/fonts/HelveticaNeue-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('assets/fonts/Helvetica-BoldOblique.woff2') format('woff2'),
+        url('assets/fonts/Helvetica-BoldOblique.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    color: #777;
+    font-size: 14px;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+input:focus, textarea:focus, button:focus, a:focus {
+    outline: none;
+}
+
+button[type=submit], input[type=submit] {
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+	margin: 0 0 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+input, textarea {
+    padding: 10px 15px;
+    margin-bottom: 1em;
+}
+
+.bg {
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.btn {
+    border-radius: 25px;
+    position: relative;
+}
+
+.btn .icon {
+    position: absolute;
+    right: 20px;
+}
+
+.btn-magenta {
+    background: #CC20C6;
+    color: #fff;
+}
+
+.btn-light {
+    background: #fff!important;
+    border: 0.5px solid #D1D1D1;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.form-box .alert {
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form-box .alert {
+    color: #4C4848;
+}
+
+.form-box .alert-success {
+    background: #FCFFFF;
+    /* border-radius: 1px solid #44EBFF; */
+}
+
+.form-box .alert-warning {
+    background: #FFFFFC;
+    /* border-radius: 1px solid #44EBFF; */
+}
+
+/* Topbar Style */
+.header-wrap > .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-brand img {
+    max-width: 155px;
+}
+
+.social-menu li {
+    display: inline-block;
+}
+
+.social-menu li a {
+    padding: 0.5rem;
+    display: block;
+    font-size: 18px;
+}
+
+.navbar.navbar-light .navbar-nav .nav-link, .navbar a {
+    color: rgba(76,72,72,0.6);
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-item:hover .nav-link, .navbar a:hover {
+    color: #38C910;
+}
+
+.navbar-collapse {
+    /* border-top: 1px solid #ddd; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.social-menu {
+    border-top: 1px solid #ddd;
+}
+
+.header-wrap {
+    box-shadow: 0 -1px 10px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.navbar-nav {
+    padding: 0.5rem 0;
+}
+
+
+
+/* Content Style */
+.main-content {
+    padding: 50px 0;
+}
+
+.content-shadow {
+    border: 2px solid #CC20C6;
+    padding: 1rem;
+    box-shadow: 6px 10px 20px rgba(0,0,0,0.1);
+    border-radius: 26px;
+}
+
+
+
+/* Form Style */
+.form-box {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-title {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #38C910;
+    font-weight: 700;
+}
+
+.form-box h5 {
+    font-size: 17px;
+    color: #4C4848;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-control-lg {
+    font-size: 16px;
+}
+
+.gmap-box {
+    padding: 2rem 1rem;
+}
+
+.maplist {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.8rem 0;
+    max-height: 550px;
+    overflow: auto;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+.maplist li {
+    display: block;
+    cursor: pointer;
+}
+
+.maplist h4 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.maplist li p {
+    margin: 0;
+    opacity: 0.54;
+}
+
+.maplist li.active {
+    padding-left: 10px;
+    border-left: 8px solid #CC20C6;
+}
+
+.maplist li+li {
+    margin-top: 1rem;
+}
+
+.gmap-search .form-group {
+    position: relative;
+}
+
+.gmap-search .btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border: none;
+    transform: translateY(-50%);
+}
+
+#map {
+    height: 100%;
+}
+
+
+
+
+
+/* Responsive */
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .navbar-collapse {
+        position: relative;
+        box-shadow: 0 0 0;
+    }
+    .social-menu {
+        border-top: 0 none;
+        border-left: 1px solid #ddd;
+    }
+    .navbar, .navbar-nav, .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 5px solid transparent;
+    }
+    .navbar-light .navbar-nav .nav-item {
+        position: relative;
+    }
+    .navbar-light .navbar-nav .nav-item::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        height: 4px;
+        width: 0;
+        transition: all 0.5s;
+        content: '';
+        background: #38C910;
+        transform: translateX(-50%)
+    }
+    .navbar-light .navbar-nav .nav-item.active::after, .navbar-light .navbar-nav .nav-item:hover::after {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    body {
+        font-size: 18px;
+    }
+}
