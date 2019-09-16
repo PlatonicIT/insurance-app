@@ -91,17 +91,11 @@ function initMap() {
 
         var maplist = document.querySelectorAll('.maplist li');
         maplist.forEach(function (list) {
-            list.addEventListener('click', function () {
+            list.addEventListener('click', function (e) {
                 lat = this.getAttribute('data-lat');
                 long = this.getAttribute('data-long');
                 index = this.getAttribute('data-index');
-                // console.log(lat + long);
                 infowindow.setContent(locations[index][0]);
-                // var map2 = new google.maps.Map(document.getElementById('map'), {
-                //     zoom: 13,
-                //     center: new google.maps.LatLng(lat, long),
-                //     // mapTypeId: google.maps.MapTypeId.ROADMAP
-                // });
 
                 marker2 = new google.maps.Marker({
                     position: new google.maps.LatLng(lat, long),
