@@ -1,131 +1,220 @@
 function initMap() {
 
-    var broadway = {
-        name: '<h5>Chipotle on Broadway</h5>',
-        house: '5224 N Broadway St Chicago',
-        street: 'IL 60640',
-        postcode: 'IL 60640',
-        city: 'IL 60640',
-        web: 'IL 60640',
-        email: 'IL 60640',
-        tel: 'IL 60640',
-        discount: '50%',
-        lat: 41.976816,
-        long: -87.659916,
-    };
-
-    var belmont = {
-        info: '<h5>Chipotle on Belmont</h5>\
-					<p>1025 W Belmont Ave Chicago, IL 60657<br>W8RV+23 Chicago, Illinois, USA</p>',
-        lat: 41.939670,
-        long: -87.655167,
-        discount: ''
-    };
-
-    var sheridan = {
-        info: '<h5>Chipotle on Sheridan</h5>\
-					<p>6600 N Sheridan Rd Chicago, IL 60626<br>W8RV+23 Chicago, Illinois, USA</p>',
-        lat: 42.002707,
-        long: -87.661236,
-        discount: '70%'
-    };
-
-    var bittersweet = {
-        info: '<h5>Bittersweet Pastry Shop & Cafe</h5>\
-					<p>1114 W Belmont Ave, Chicago, IL 60657, USA<br>W8RV+23 Chicago, Illinois, USA</p>',
-        lat: 41.9397349,
-        long: -87.6573341,
-        discount: '40%'
-    };
-
-    var giordano = {
-        info: '<h5>Giordano\'s</h5>\
-					<p>1040 W Belmont Ave, Chicago, IL 60657, USA<br>W8RV+2P Chicago, Illinois, USA</p>',
-        lat: 41.9401121,
-        long: -87.6558872,
-        discount: ''
-    };
-
-    var cheesie = {
-        info: '<h5>Cheesie\'s Pub & Grub Lakeview</h5>\
-                    <p>958 W Belmont Ave, Chicago, IL 60657, USA<br>W8RW+2F Chicago, Illinois, USA</p>\
-                    <a href="callto:0613500347" target="_self">06-13500347 - BEL!</a>',
-        lat: 41.9397349,
-        long: -87.6573341,
-        discount: ''
-    };
-
-    var crystal = {
-        info: '<h5>Crystal Cleaners</h5>\
-					<p>1024 W Belmont Ave, Chicago, IL 60657, USA<br>W8QV+XW Chicago, Illinois, USA</p>',
-        lat: 41.9397349,
-        long: -87.6573341,
-        discount: '60%'
-    };
-
     var locations = [
-        [broadway.info, broadway.lat, broadway.long, 0],
-        [belmont.info, belmont.lat, belmont.long, 1],
-        [sheridan.info, sheridan.lat, sheridan.long, 2],
-        [bittersweet.info, bittersweet.lat, bittersweet.long, 3],
-        [giordano.info, giordano.lat, giordano.long, 4],
-        [cheesie.info, cheesie.lat, cheesie.long, 5],
-        [crystal.info, crystal.lat, crystal.long, 6],
+        {
+            name: 'Aesthetic Medical Center Tergooi',
+            house: '212',
+            street: 'Van Riebeeckweg',
+            postcode: '1213 XZ',
+            city: 'Hilversum',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: '',
+            lat: '41.976836',
+            long: '-87.659116',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
+        {
+            name: 'Afranature',
+            house: '34',
+            street: 'Oud Milligenseweg',
+            postcode: '3886 ME',
+            city: 'Garderen',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: 'Lorem ipsum doler 1 - 40% OFF <br>Lorem ipsum doler 2',
+            lat: '41.977711',
+            long: '-87.659516',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
+        {
+            name: 'Praktijk Esthetiek Huidtherapie',
+            house: '27',
+            street: 'Burgemeester Daleslaanevaart',
+            postcode: '6532 CL',
+            city: 'Nijmegen',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: 'Lorem ipsum doler 1 - 50% OFF <br>Lorem ipsum doler 2',
+            lat: '41.976536',
+            long: '-87.659316',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
+        {
+            name: 'Shell Tankstation Kapellebrug B.V.',
+            house: '79',
+            street: 'Gentsevaart',
+            postcode: '4565 ES',
+            city: 'Kapellebrug',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: 'Lorem ipsum doler 1 - 50% OFF <br>Lorem ipsum doler 2',
+            lat: '41.976816',
+            long: '-87.658216',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
+        {
+            name: 'Shell Tankstation Kapellebrug B.V.',
+            house: '79',
+            street: 'Gentsevaart',
+            postcode: '4565 ES',
+            city: 'Kapellebrug',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: '',
+            lat: '41.976816',
+            long: '-87.657116',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
+        {
+            name: 'Afranature',
+            house: '34',
+            street: 'Oud Milligenseweg',
+            postcode: '3886 ME',
+            city: 'Garderen',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: '',
+            lat: '41.977711',
+            long: '-87.658516',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
+        {
+            name: 'Praktijk Esthetiek Huidtherapie',
+            house: '27',
+            street: 'Burgemeester Daleslaanevaart',
+            postcode: '6532 CL',
+            city: 'Nijmegen',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: '',
+            lat: '41.975036',
+            long: '-87.659316',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
+        {
+            name: 'Aesthetic Medical Center Tergooi',
+            house: '212',
+            street: 'Van Riebeeckweg',
+            postcode: '1213 XZ',
+            city: 'Hilversum',
+            web: 'http://www.emctergooi.nl',
+            email: 'emc@tergooi.nl',
+            phone: '088-7531440',
+            discount: 'Lorem ipsum doler 1 - 70% OFF <br>Lorem ipsum doler 2',
+            lat: '41.966836',
+            long: '-87.655116',
+            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+        },
     ];
 
+    var locationsFilter = locations;
+    document.getElementById('disCountFilterReset').style.display = 'none';
+
+    document.getElementById('disCountFilter').addEventListener('click', function () {
+        this.style.display = 'none';
+        document.getElementById('disCountFilterReset').style.display = 'block';
+        locationsFilter = locations.filter(function (item) {
+            for (var key in item.discount) {
+                if (item[key] === undefined || item[key] != filter[key])
+                    return true;
+            }
+            return false;
+        });
+        document.getElementById('maplist').innerHTML = '';
+        locationList();
+        // resetData();
+    });
+
+    document.getElementById('disCountFilterReset').addEventListener('click', function () {
+        this.style.display = 'none';
+        document.getElementById('disCountFilter').style.display = 'block';
+        locationsFilter = locations;
+        document.getElementById('maplist').innerHTML = '';
+        locationList();
+        // resetData();
+    });
+
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
+        zoom: 17,
         center: new google.maps.LatLng(41.976816, -87.659916),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
     var infowindow = new google.maps.InfoWindow({});
+    var marker, i = 0;
 
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
-        });
-
-        var child = document.createElement('li');
-        function setAttributes(el, attrs) {
-            for (var key in attrs) {
-                el.setAttribute(key, attrs[key]);
+    var locationList = function () {
+        locationsFilter.forEach(location => {
+            i = i + 1;
+            var leftInfo = '<h5>' + location.name + '</h5>\
+                <p>'+ location.street + ' ' + location.house + '</p>\
+                <p>'+ location.postcode + ' ' + location.city + '</p>';
+            var markerInfo = '<h5>' + location.name + '</h5>\
+                <p>'+ location.street + ' ' + location.house + '</p>\
+                <p>'+ location.postcode + ' ' + location.city + '</p>\
+                <a href="callto:'+ location.phone + '">' + location.phone + '</a>\
+                <a href="mailto:'+ location.email + '">' + location.email + '</a>\
+                <a href="'+ location.web + '">' + location.web + '</a>\
+                <h5 class="mt-2">Treatments & Discounts</h5>\
+                <p>'+ location.discount + '</p>\
+                <div class="text-center mt-3">\<a href="'+ location.more[1] + '" class="btn btn-magenta rounded d-inline-block text-white opacity-1">' + location.more[0] + '</a>\<div>';
+            var child = document.createElement('li');
+            function setAttributes(el, attrs) {
+                for (var key in attrs) {
+                    el.setAttribute(key, attrs[key]);
+                }
             }
-        }
-        setAttributes(child, {
-            "data-lat": locations[i][1],
-            "data-long": locations[i][2],
-            "data-index": i,
-            "data-discount": locations[i][3]
-        });
-        child.innerHTML = locations[i][0];
-        document.getElementById('maplist').appendChild(child);
-
-        var maplist = document.querySelectorAll('.maplist li');
-        maplist.forEach(function (list) {
-            list.addEventListener('click', function (e) {
-                lat = this.getAttribute('data-lat');
-                long = this.getAttribute('data-long');
-                index = this.getAttribute('data-index');
-                infowindow.setContent(locations[index][0]);
-
-                marker2 = new google.maps.Marker({
-                    position: new google.maps.LatLng(lat, long),
-                    center: new google.maps.LatLng(lat, long),
-                    map: map
-                });
-                infowindow.open(map, marker2);
+            setAttributes(child, {
+                "data-lat": location.lat,
+                "data-long": location.long,
+                "data-index": i - 1,
+                "data-discount": location.discount
             });
-        });
+            child.innerHTML = leftInfo;
+            document.getElementById('maplist').appendChild(child);
 
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
+            // Set The Markers
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(location.lat, location.long),
+                map: map
+            });
+
+            // Click on list
+            var maplist = document.querySelectorAll('.maplist li');
+            maplist.forEach(function (list) {
+                list.addEventListener('click', function (e) {
+                    lat = this.getAttribute('data-lat');
+                    long = this.getAttribute('data-long');
+                    index = this.getAttribute('data-index');
+                    infowindow.setContent(markerInfo);
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(lat, long),
+                        center: new google.maps.LatLng(lat, long),
+                        map: map
+                    });
+                    infowindow.open(map, marker);
+                });
+            });
+            attachSecretMessage(marker, markerInfo);
+        });
+    }
+
+    // Export the list
+    locationList();
+
+    // Click to Show info on marker
+    function attachSecretMessage(marker, secretMessage) {
+        marker.addListener('click', function () {
+            infowindow.setContent(secretMessage);
+            infowindow.open(marker.get('map'), marker);
+        });
     }
 }

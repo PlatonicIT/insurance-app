@@ -53,6 +53,6 @@ $('.form-control').on('change', function () {
 $('#maplist').on('click', 'li', function () { $(this).addClass('active').siblings().removeClass('active') });
 
 
-$('#disCount').on('click', function () {
-    $(this).toggleClass('active');
-});
+// $('#disCount').on('click', function () {
+//     $(this).toggleClass('active');
+// });

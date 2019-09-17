@@ -32,8 +32,8 @@ Author URI: https://www.platonicit.com/
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('assets/fonts/Helvetica-BoldOblique.woff2') format('woff2'),
-        url('assets/fonts/Helvetica-BoldOblique.woff') format('woff');
+    src: url('assets/fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('assets/fonts/Helvetica-Bold.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
@@ -73,6 +73,10 @@ img {
 input, textarea {
     padding: 10px 15px;
     margin-bottom: 1em;
+}
+
+.opacity-1 {
+    opacity: 1!important;
 }
 
 .bg {
@@ -243,28 +247,34 @@ input, textarea {
     padding: 2rem 1rem;
 }
 
-.gmap-box #disCount.active {
+.gmap-box .btn.active {
     background: #38C910!important;
-    color: #fff;
+    color: #fff!important;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+#map {
+    height: 350px;
 }
 
 .maplist {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0.8rem 0;
-    max-height: 550px;
+    max-height: 350px;
     overflow: auto;
     font-size: 16px;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .maplist li {
     display: block;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .maplist h5 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     margin-bottom: 5px;
 }
@@ -293,10 +303,6 @@ input, textarea {
     right: 0;
     border: none;
     transform: translateY(-50%);
-}
-
-#map {
-    height: 100%;
 }
 
 .gm-style .gm-style-iw-c {
@@ -377,14 +383,27 @@ input, textarea {
     .navbar-light .navbar-nav .nav-item.active::after, .navbar-light .navbar-nav .nav-item:hover::after {
         width: 100%;
     }
+    .maplist li {
+        font-size: 15px;
+    }
+    .maplist h5 {
+        font-size: 15px;
+    }
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 990px) {
     body {
         font-size: 16px;
     }
     .form-control-lg {
         font-size: 15px;
+    }
+    .maplist {
+        height: 450px;
+        max-height: unset;
+    }    
+    #map {
+        height: 100%;
     }
 }
 
@@ -395,10 +414,19 @@ input, textarea {
     .form-control-lg {
         font-size: 16px;
     }
+    .maplist {
+        height: 550px;
+    }
 }
 
 @media screen and (min-width: 1499px) {
     body {
         font-size: 18px;
+    }
+    .maplist li {
+        font-size: 16px;
+    }
+    .maplist h5 {
+        font-size: 16px;
     }
 }
