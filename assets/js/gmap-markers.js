@@ -69,7 +69,7 @@ function initMap() {
             discount: '',
             lat: '41.976816',
             long: '-87.657116',
-            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+            more: '',
         },
         {
             name: 'Afranature',
@@ -83,7 +83,7 @@ function initMap() {
             discount: '',
             lat: '41.977711',
             long: '-87.658516',
-            more: ['Meer over ons', 'http://www.emctergooi.nl'],
+            more: '',
         },
         {
             name: 'Praktijk Esthetiek Huidtherapie',
@@ -145,7 +145,8 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 17,
         center: new google.maps.LatLng(41.976816, -87.659916),
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true
     });
 
     var infowindow = new google.maps.InfoWindow({});
@@ -157,26 +158,37 @@ function initMap() {
             var leftInfo = '<h5>' + location.name + '</h5>\
                 <p>'+ location.street + ' ' + location.house + '</p>\
                 <p>'+ location.postcode + ' ' + location.city + '</p>';
+            var discount = location.discount;
+            if (discount) {
+                discount = '<h5 class="mt-2">Treatments & Discounts</h5>\
+                        <p>'+ discount + '</p>';
+            } else {
+                discount = '';
+            }
+            var more = location.more;
+            if (more) {
+                more = '<div class="text-center mt-2">\<a href="' + more[1] + '" class="btn btn-magenta rounded d-inline-block btn-sm text-white opacity-1">' + more[0] + '</a>\<div>';
+            } else {
+                more = '';
+            }
             var markerInfo = '<h5>' + location.name + '</h5>\
-                <p>'+ location.street + ' ' + location.house + '</p>\
-                <p>'+ location.postcode + ' ' + location.city + '</p>\
-                <a href="callto:'+ location.phone + '">' + location.phone + '</a>\
-                <a href="mailto:'+ location.email + '">' + location.email + '</a>\
-                <a href="'+ location.web + '">' + location.web + '</a>\
-                <h5 class="mt-2">Treatments & Discounts</h5>\
-                <p>'+ location.discount + '</p>\
-                <div class="text-center mt-3">\<a href="'+ location.more[1] + '" class="btn btn-magenta rounded d-inline-block text-white opacity-1">' + location.more[0] + '</a>\<div>';
+                            <p>'+ location.street + ' ' + location.house + '</p>\
+                            <p>'+ location.postcode + ' ' + location.city + '</p>\
+                            <a href="callto:'+ location.phone + '">' + location.phone + '</a>\
+                            <a href="mailto:'+ location.email + '">' + location.email + '</a>\
+                            <a href="'+ location.web + '">' + location.web + '</a>\
+                            '+ discount + '\
+                            '+ more;
             var child = document.createElement('li');
             function setAttributes(el, attrs) {
                 for (var key in attrs) {
                     el.setAttribute(key, attrs[key]);
                 }
             }
+
+            var locationObj = Object.assign({}, location);
             setAttributes(child, {
-                "data-lat": location.lat,
-                "data-long": location.long,
-                "data-index": i - 1,
-                "data-discount": location.discount
+                "data-location": JSON.stringify(locationObj),
             });
             child.innerHTML = leftInfo;
             document.getElementById('maplist').appendChild(child);
@@ -187,14 +199,46 @@ function initMap() {
                 map: map
             });
 
+            attachSecretMessage(marker, markerInfo);
+
             // Click on list
             var maplist = document.querySelectorAll('.maplist li');
             maplist.forEach(function (list) {
                 list.addEventListener('click', function (e) {
-                    lat = this.getAttribute('data-lat');
-                    long = this.getAttribute('data-long');
-                    index = this.getAttribute('data-index');
-                    infowindow.setContent(markerInfo);
+                    var info = JSON.parse(this.getAttribute('data-location')),
+                        lat = info.lat,
+                        long = info.long,
+                        name = info.name,
+                        city = info.city,
+                        house = info.house,
+                        post = info.postcode,
+                        street = info.street,
+                        email = info.email,
+                        phone = info.phone,
+                        web = info.web,
+                        discount = info.discount;
+                    if (discount) {
+                        discount = '<h5 class="mt-2">Treatments & Discounts</h5>\
+                                <p>'+ discount + '</p>';
+                    } else {
+                        discount = '';
+                    }
+                    var more = info.more;
+                    if (more) {
+                        more = '<div class="text-center mt-2">\<a href="' + more[1] + '" class="btn btn-magenta rounded d-inline-block btn-sm text-white opacity-1">' + more[0] + '</a>\<div>';
+                    } else {
+                        more = '';
+                    }
+                    var markerInfo2 = '<h5>' + name + '</h5>\
+                                    <p>'+ street + ' ' + house + '</p>\
+                                    <p>'+ post + ' ' + city + '</p>\
+                                    <a href="callto:'+ phone + '">' + phone + '</a>\
+                                    <a href="mailto:'+ email + '">' + email + '</a>\
+                                    <a href="'+ web + '">' + web + '</a>\
+                                    '+ discount + '\
+                                    '+ more;
+
+                    infowindow.setContent(markerInfo2);
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(lat, long),
                         center: new google.maps.LatLng(lat, long),
@@ -203,9 +247,9 @@ function initMap() {
                     infowindow.open(map, marker);
                 });
             });
-            attachSecretMessage(marker, markerInfo);
         });
     }
+
 
     // Export the list
     locationList();
