@@ -52,7 +52,14 @@ $('.form-control').on('change', function () {
 
 $('#maplist').on('click', 'li', function () { $(this).addClass('active').siblings().removeClass('active') });
 
+$('body.active-mobile-nav').on('click', function () {
+    console.log($(this));
+});
 
-// $('#disCount').on('click', function () {
-//     $(this).toggleClass('active');
-// });
+$('.navbar-close').on('click', function () {
+    $('body, .mobile-nav').removeClass('active-mobile-nav');
+});
+
+$('.navbar-toggler').on('click', function () {
+    $('body, .mobile-nav').addClass('active-mobile-nav');
+});
