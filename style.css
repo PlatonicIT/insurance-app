@@ -16,26 +16,30 @@ Author URI: https://www.platonicit.com/
 /* Font Face */
 @font-face {
     font-family: 'Helvetica';
-    src: url('assets/fonts/Helvetica.woff2') format('woff2'),
-        url('assets/fonts/Helvetica.woff') format('woff');
+    src: url('fonts/Helvetica.woff2') format('woff2'),
+        url('fonts/Helvetica.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('assets/fonts/HelveticaNeue-Medium.woff2') format('woff2'),
-        url('assets/fonts/HelveticaNeue-Medium.woff') format('woff');
+    src: url('fonts/HelveticaNeue-Medium.woff2') format('woff2'),
+        url('fonts/HelveticaNeue-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('assets/fonts/Helvetica-Bold.woff2') format('woff2'),
-        url('assets/fonts/Helvetica-Bold.woff') format('woff');
+    src: url('fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('fonts/Helvetica-Bold.woff') format('woff');
     font-weight: bold;
     font-style: italic;
+}
+
+html, body {
+    font-size: 100%;
 }
 
 body {
@@ -70,9 +74,17 @@ img {
     max-width: 100%;
 }
 
+.fa, .fas {
+    padding-right: 0!important;
+}
+
 input, textarea {
     padding: 10px 15px;
     margin-bottom: 1em;
+}
+
+input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button[type="submit"]:hover, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button[type="submit"]:focus, .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
+    background-color: #a0109b;
 }
 
 .opacity-1 {
@@ -108,7 +120,26 @@ input, textarea {
 
 .btn .icon {
     position: absolute;
-    right: 20px;
+    right: 50px;
+    /* visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s; */
+}
+
+.btn:hover .icon {
+    /* opacity: 1;
+    visibility: visible;
+    right: 45px; */
+    animation: bounceright 0.3s alternate ease infinite;
+}
+
+@keyframes bounceright {
+  from {
+    -webkit-transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(3px);
+  }
 }
 
 .btn-magenta {
@@ -128,6 +159,10 @@ input, textarea {
     font-size: 16px;
     font-weight: 500;
     border-width: 2px;
+}
+
+.form-box .btn {
+    border-radius: 25px;
 }
 
 .form-box .alert {
@@ -159,11 +194,16 @@ input, textarea {
 }
 
 .social-menu li a {
-    padding: 0.5rem;
+    padding: 8px;
     display: block;
     font-size: 18px;
 }
 
+.navbar.navbar-light .navbar-nav .wcmenucart-toggle-cart a {
+    display: flex;
+    padding: 24px;
+    font-size: 125%;
+}
 .navbar.navbar-light .navbar-nav .nav-link, .navbar a {
     color: rgba(76,72,72,0.6);
 }
@@ -174,8 +214,8 @@ input, textarea {
 
 .navbar-collapse {
     /* border-top: 1px solid #ddd; */
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 16px;
+    padding-right: 16px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -191,11 +231,11 @@ input, textarea {
 
 .header-wrap {
     box-shadow: 0 -1px 10px rgba(0,0,0,0.1);
-    border-bottom: 1px solid #f3f3f3;
+    /* border-bottom: 1px solid #f3f3f3; */
 }
 
 .navbar-nav {
-    padding: 0.5rem 0;
+    padding: 8px 0;
 }
 
 .mobile-nav {
@@ -216,7 +256,7 @@ input, textarea {
     display: block;
     width: 100%;
     background: #f8f8f8;
-    padding: 1rem;
+    padding: 16px;
     font-weight: 500;
     border: none;
     text-align: left;
@@ -232,7 +272,7 @@ input, textarea {
     text-align: center;
     border: 1px solid;
     border-radius: 50%;
-    margin-right: 0.2rem;
+    margin-right: 4px;
     opacity: 0.8;
     line-height: 1.2;
     vertical-align: text-bottom;
@@ -244,7 +284,7 @@ input, textarea {
 
 .mobile-menu li a {
     display: block;
-    padding: 0.8rem 1rem;
+    padding: 8px 16px;
     color: #555;
     font-size: 16px;
 }
@@ -254,7 +294,7 @@ input, textarea {
 }
 
 .mobile-nav .social-menu a {
-    padding: 1rem;
+    padding: 16px;
     color: #38C910;
 }
 
@@ -279,11 +319,13 @@ body.active-mobile-nav:after {
 .shopping-cart {
     font-size: 25px;
     margin-left: auto;
-    padding: 0.8rem;
+    padding: 8px;
+    color: #0ff10f!important;
 }
 
 .navbar-light .navbar-toggler {
     border: none;
+    background: transparent;
 }
 
 
@@ -294,7 +336,7 @@ body.active-mobile-nav:after {
 
 .content-shadow {
     border: 2px solid #CC20C6;
-    padding: 1rem;
+    padding: 16px;
     box-shadow: 6px 10px 20px rgba(0,0,0,0.1);
     border-radius: 26px;
 }
@@ -303,6 +345,7 @@ body.active-mobile-nav:after {
 
 /* Form Style */
 .form-box {
+    padding: 20px;
     max-width: 500px;
     margin: 0 auto;
 }
@@ -310,7 +353,7 @@ body.active-mobile-nav:after {
 .form-title {
     font-size: 25px;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     color: #38C910;
     font-weight: 700;
 }
@@ -319,7 +362,7 @@ body.active-mobile-nav:after {
     font-size: 17px;
     color: #4C4848;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .form-control-lg {
@@ -332,7 +375,7 @@ body.active-mobile-nav:after {
 }
 
 .gmap-box {
-    padding: 2rem 1rem;
+    padding: 32px 16px;
 }
 
 .gmap-box .btn.active {
@@ -351,12 +394,12 @@ body.active-mobile-nav:after {
 
 .maplist {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0.8rem 0;
+    padding: 8px 0;
     max-height: 350px;
     overflow: auto;
     font-size: 16px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .maplist li {
@@ -382,7 +425,7 @@ body.active-mobile-nav:after {
 }
 
 .maplist li+li {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .gmap-search .form-group {
@@ -424,8 +467,8 @@ body.active-mobile-nav:after {
 }
 
 .gm-style .gm-style-iw-d > div {
-    padding: 0.5rem;
-    padding-top: 1.5rem;
+    padding: 8px;
+    padding-top: 24px;
 }
 
 .gm-style .gm-style-iw-c p {
@@ -440,13 +483,21 @@ body.active-mobile-nav:after {
 
 .gm-style .btn {
     font-size: 10px;
-    padding: 0.2rem 0.5rem;
+    padding: 4px 8px;
 }
 
 
 
 /* Responsive */
-
+@media screen and (max-width: 768px) {
+    .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated {
+        padding: 0!important;
+    }
+    .navbar {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 @media screen and (min-width: 768px) {
     body {
         font-size: 16px;
@@ -464,9 +515,11 @@ body.active-mobile-nav:after {
         padding-bottom: 0;
     }
     .navbar-light .navbar-nav .nav-link {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 28px;
+        padding-bottom: 24px;
         border-bottom: 5px solid transparent;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     .navbar-light .navbar-nav .nav-item {
         position: relative;
@@ -508,20 +561,20 @@ body.active-mobile-nav:after {
         height: 100%;
     }
     .gm-style .gm-style-iw-d > div {
-        padding: 1rem;
+        padding: 16px;
     }
     .gm-style .gm-style-iw-c h5, .gm-style .gm-style-iw-c {
         font-size: 14px;
     }
     .gm-style .btn {
         font-size: 12px;
-        padding: 0.3rem 0.7rem;
+        padding: 5px 12px;
     }
 }
 
 @media screen and (min-width: 1199px) {
     body {
-        font-size: 17px;
+        /* font-size: 17px; */
     }
     .form-control-lg {
         font-size: 16px;
@@ -529,11 +582,15 @@ body.active-mobile-nav:after {
     .maplist {
         height: 550px;
     }
+    .navbar-light .navbar-nav .nav-link {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }
 
 @media screen and (min-width: 1499px) {
     body {
-        font-size: 18px;
+        /* font-size: 18px; */
     }
     .maplist li {
         font-size: 16px;
