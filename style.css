@@ -48,6 +48,17 @@ body {
     font-size: 14px;
 }
 
+select { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(https://image.flaticon.com/icons/png/512/25/25623.png);
+    background-position-x: calc(100% - 10px);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
 a:hover, a:focus {
     text-decoration: none;
 }
