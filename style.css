@@ -385,7 +385,7 @@ body.active-mobile-nav:after {
 }
 
 .gmap-search .form-control-lg {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 #map {
@@ -438,7 +438,10 @@ body.active-mobile-nav:after {
     right: 0;
     border: none;
     transform: translateY(-50%);
-    font-size: 20px;
+}
+
+#disCountFilter, #disCountFilterReset {
+    font-size: 16px;
 }
 
 .gm-style .gm-style-iw-c {
